@@ -160,7 +160,7 @@ in {
     dictFileName = "es_ANY";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2933/es_ANY.oxt;
-      md5 = "e3d4b38f280e7376178529db2ece982b";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -170,7 +170,7 @@ in {
     dictFileName = "es_AR";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2953/es_AR.oxt;
-      md5 = "68ee8f4ebc89a1fa461045d4dbb9b7be";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -180,7 +180,7 @@ in {
     dictFileName = "es_BO";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2952/es_BO.oxt;
-      md5 = "1ebf11b6094e0bfece8e95cc34e7a409";
+      sha256sum = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -190,7 +190,7 @@ in {
     dictFileName = "es_CL";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2951/es_CL.oxt;
-      md5 = "092a388101350b77af4fd789668582bd";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -200,7 +200,7 @@ in {
     dictFileName = "es_CO";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2950/es_CO.oxt;
-      md5 = "fc440fd9fc55ca2dfb9bfa34a1e63864";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -210,7 +210,7 @@ in {
     dictFileName = "es_CR";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2949/es_CR.oxt;
-      md5 = "7510fd0f4eb3c6e65523a8d0960f77dd";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -220,7 +220,7 @@ in {
     dictFileName = "es_CU";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2948/es_CU.oxt;
-      md5 = "0ab4b9638f58ddd3d95d1265918ff39e";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -230,7 +230,7 @@ in {
     dictFileName = "es_DO";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2947/es_DO.oxt;
-      md5 = "24a20fd4d887693afef539e6f1a3b58e";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -240,7 +240,7 @@ in {
     dictFileName = "es_EC";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2946/es_EC.oxt;
-      md5 = "5d7343a246323ceda58cfbbf1428e279";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -250,7 +250,7 @@ in {
     dictFileName = "es_ES";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2945/es_ES.oxt;
-      md5 = "59dd45e6785ed644adbbd73f4f126182";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -260,7 +260,7 @@ in {
     dictFileName = "es_GT";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2944/es_GT.oxt;
-      md5 = "b1a9be80687e3117c67ac46aad6b8d66";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -270,7 +270,7 @@ in {
     dictFileName = "es_HN";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2943/es_HN.oxt;
-      md5 = "d0db5bebd6925738b524de9709950f22";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -280,7 +280,7 @@ in {
     dictFileName = "es_MX";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2942/es_MX.oxt;
-      md5 = "0de780714f84955112f38f35fb63a894";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -290,7 +290,7 @@ in {
     dictFileName = "es_NI";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2941/es_NI.oxt;
-      md5 = "d259d7be17c34df76c7de40c80720a39";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -300,7 +300,7 @@ in {
     dictFileName = "es_PA";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2940/es_PA.oxt;
-      md5 = "085fbdbed6a2e248630c801881563b7a";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -310,7 +310,7 @@ in {
     dictFileName = "es_PE";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2939/es_PE.oxt;
-      md5 = "f4673063246888995d4eaa2d4a24ee3d";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -320,7 +320,7 @@ in {
     dictFileName = "es_PR";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2938/es_PR.oxt;
-      md5 = "e67bcf891ba9eeaeb57a60ec8e57f1ac";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -330,7 +330,7 @@ in {
     dictFileName = "es_PY";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2937/es_PY.oxt;
-      md5 = "ba98e3197c81db4c572def2c5cca942d";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -340,7 +340,7 @@ in {
     dictFileName = "es_SV";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2936/es_SV.oxt;
-      md5 = "c68ca9d188cb23c88cdd34a069c5a013";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -350,7 +350,7 @@ in {
     dictFileName = "es_UY";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2935/es_UY.oxt;
-      md5 = "aeb9d39e4d17e9c904c1f3567178aad6";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -360,7 +360,7 @@ in {
     dictFileName = "es_VE";
     src = fetchurl {
       url = http://forja.rediris.es/frs/download.php/2934/es_VE.oxt;
-      md5 = "8afa9619aede2d9708e799e0f5d0fcab";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 
@@ -416,7 +416,7 @@ in {
     shortDescription = "Hunspell dictionary for 'Italian (Italy)' from Linguistico";
     src = fetchurl {
       url = mirror://sourceforge/linguistico/italiano_2_4_2007_09_01.zip;
-      md5 = "e7fbd9e2dfb25ea3288cdb918e1e1260";
+      sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
     };
   };
 }
