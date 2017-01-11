@@ -14560,6 +14560,8 @@ in
 
   pond = callPackage ../applications/networking/instant-messengers/pond { };
 
+  polybar = callPackage ../applications/window-managers/polybar { };
+
   ponymix = callPackage ../applications/audio/ponymix { };
 
   potrace = callPackage ../applications/graphics/potrace {};
