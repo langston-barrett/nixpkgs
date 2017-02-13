@@ -53,6 +53,29 @@ in
       '';
     };
 
+    trustedPathExecution = {
+      enable = mkOption {
+        type = types.bool;
+        example = true;
+        default = false;
+        description = ''
+          Enable the (optional) Trusted Path Execution feature. Support for
+          this feature should be considered experimental, so enable at your own
+          risk.
+        '';
+      }
+
+      partialRestriction = mkOption {
+        type = types.bool;
+        example = true;
+        default = false;
+        description = ''
+          Restrict all non-root users to executing binaries owned and only
+          writable by themselves, or binaries owned and writable only by root.
+        '';
+      }
+    }
+
   };
 
   config = mkIf cfg.enable {

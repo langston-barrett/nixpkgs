@@ -1,4 +1,4 @@
-{ stdenv }:
+{ stdenv, config }:
 
 with stdenv.lib;
 
@@ -53,8 +53,9 @@ GRKERNSEC_AUDIT_MOUNT y
 GRKERNSEC_AUDIT_PTRACE y
 GRKERNSEC_FORKFAIL y
 
-# Wishlist: support trusted path execution
-GRKERNSEC_TPE n
+# Trusted Path Execution
+GRKERNSEC_TPE ${if config.security.grsecurity.trustedPathExecution then "y" else "n"}
+GRKERNSEC_TPE_ALL ${if config.security.grsecurity.partialRestriction then "y" else "n"}
 
 GRKERNSEC_SYSCTL y
 GRKERNSEC_SYSCTL_DISTRO y
