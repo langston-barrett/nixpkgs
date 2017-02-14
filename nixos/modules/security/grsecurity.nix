@@ -9,6 +9,8 @@ let
   # Ascertain whether NixOS container support is required
   containerSupportRequired =
     config.boot.enableContainers && config.containers != {};
+
+  mkDefaultIf = cond: if cond then mkDefault 1 else mkDefault 0;
 in
 
 {
@@ -54,6 +56,7 @@ in
     };
 
     trustedPathExecution = {
+
       enable = mkOption {
         type = types.bool;
         example = true;
@@ -63,7 +66,7 @@ in
           this feature should be considered experimental, so enable at your own
           risk.
         '';
-      }
+      };
 
       partialRestriction = mkOption {
         type = types.bool;
@@ -73,8 +76,9 @@ in
           Restrict all non-root users to executing binaries owned and only
           writable by themselves, or binaries owned and writable only by root.
         '';
-      }
-    }
+      };
+
+    };
 
   };
 
@@ -173,6 +177,11 @@ in
       "kernel.grsecurity.rwxmap_logging" = mkDefault 1;
       "kernel.grsecurity.signal_logging" = mkDefault 1;
       "kernel.grsecurity.timechange_logging" = mkDefault 1;
+
+      # enable TPE features
+      "kernel.grsecurity.tpe" = mkDefaultIf cfg.trustedPathExecution.enable;
+      "kernel.grsecurity.tpe_restrict_all" = mkDefaultIf cfg.trustedPathExecution.partialRestriction;
+
     } // optionalAttrs config.nix.useSandbox {
       # chroot(2) restrictions that conflict with sandboxed Nix builds
       "kernel.grsecurity.chroot_caps" = mkForce 0;
