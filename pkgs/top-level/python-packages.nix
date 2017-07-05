@@ -6390,23 +6390,7 @@ in {
     };
   };
 
-  factory_boy = buildPythonPackage rec {
-    name = "factory_boy-${version}";
-    version = "2.6.1";
-
-    src = pkgs.fetchurl {
-      url = "mirror://pypi/f/factory_boy/${name}.tar.gz";
-      sha256 = "0a21f8kq917fj8xgmyp6gy8vcrlzzgwn80qas0d76h3vjbdy0bdq";
-    };
-
-    propagatedBuildInputs = with self; [ fake_factory ];
-
-    meta = {
-      description = "A Python package to create factories for complex objects";
-      homepage    = https://github.com/rbarrois/factory_boy;
-      license     = licenses.mit;
-    };
-  };
+  factory_boy = callPackage ../development/python-modules/factory-boy { };
 
   Fabric = buildPythonPackage rec {
     name = "Fabric-${version}";
