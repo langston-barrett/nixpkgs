@@ -1,21 +1,43 @@
-{ stdenv, fetchurl, m4, perl, gfortran, texlive, ffmpeg, tk, gnused_422
-, imagemagick, liblapack, python, openssl, libpng 
-, which
+{ stdenv, fetchurl, automake, autoconf, m4, perl, gfortran, texlive
+, ffmpeg, tk, gnused_422, imagemagick, liblapack, patch, python, openssl, libpng, which, atlas
 }:
 
 stdenv.mkDerivation rec {
-  name = "sage-6.8";
+  name = "sage-${version}";
+  version = "7.6";
 
   src = fetchurl {
-    url = "http://old.files.sagemath.org/src-old/${name}.tar.gz";
-    sha256 = "102mrzzi215g1xn5zgcv501x9sghwg758jagx2jixvg1rj2jijj9";
-
+    url = "mirror://sagemath/${name}.tar.gz";
+    sha256 = "1p8dpbisq2in65hkqm87y6nyzngqws5grgnir6gf37449d30wwaf";
   };
 
-  buildInputs = [ m4 perl gfortran texlive.combined.scheme-basic ffmpeg gnused_422 tk imagemagick liblapack
-                  python openssl libpng which ];
+  propagatedBuildInputs = [ atlas ];
+  SAGE_ATLAS_LIB = "${atlas}";
 
-  patches = [ ./spkg-singular.patch ./spkg-python.patch ./spkg-git.patch ];
+  buildInputs = [
+    automake
+    autoconf
+    ffmpeg
+    gfortran
+    gnused_422
+    imagemagick
+    liblapack
+    libpng
+    m4
+    openssl
+    patch
+    perl
+    python
+    texlive.combined.scheme-basic
+    tk
+    which
+  ];
+
+  patches = [
+    ./spkg-singular.patch
+    # ./spkg-python.patch
+    # ./spkg-git.patch
+  ];
 
   enableParallelBuilding = true;
 
@@ -29,7 +51,13 @@ stdenv.mkDerivation rec {
     export CPPFLAGS="-P"
   '';
 
-  preBuild = "patchShebangs build";
+  preBuild = ''
+    patchShebangs bootstrap
+    patchShebangs build
+  '';
+
+  # http://doc.sagemath.org/html/en/installation/source.html#using-alternative-compilers
+  SAGE_INSTALL_GCC = "no";
 
   installPhase = ''DESTDIR=$out make install'';
 

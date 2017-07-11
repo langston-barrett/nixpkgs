@@ -17884,6 +17884,8 @@ with pkgs;
   nauty = callPackage ../applications/science/math/nauty {};
 
   sage = callPackage ../applications/science/math/sage { };
+  sage68 = callPackage ../applications/science/math/sage/6_8.nix { };
+  sage80rc1 = callPackage ../applications/science/math/sage/8_0_rc1.nix { };
 
   suitesparse_4_2 = callPackage ../development/libraries/science/math/suitesparse/4.2.nix { };
   suitesparse_4_4 = callPackage ../development/libraries/science/math/suitesparse {};
