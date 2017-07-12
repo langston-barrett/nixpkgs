@@ -1,11 +1,13 @@
---- old/build/pkgs/python2/spkg-install	2015-07-26 15:34:43.000000000 +0200
-+++ new/build/pkgs/python2/spkg-install	2015-09-16 20:48:51.904555797 +0200
-@@ -32,7 +32,7 @@
- done
+diff -Naur sage-old/build/pkgs/python2/spkg-install sage-new/build/pkgs/python2/spkg-install
+--- sage-old/build/pkgs/python2/spkg-install	2017-07-12 18:23:32.367080391 +0000
++++ sage-new/build/pkgs/python2/spkg-install	2017-07-12 18:25:48.901847034 +0000
+@@ -22,6 +22,9 @@
  
- # We are setting LDFLAGS so that we pick up Sage's readline
--LDFLAGS="-L$SAGE_LOCAL/lib $LDFLAGS"
-+LDFLAGS="-L$SAGE_LOCAL/lib -lcrypt $LDFLAGS"
- export LDFLAGS
+ cd src
  
++LDFLAGS="-lcrypt $LDFLAGS"
++export LDFLAGS
++
  if [ "$SAGE_DEBUG" = "yes" ]; then
+     echo "Building Python with pydebug"
+     PYTHON_CONFIGURE="$PYTHON_CONFIGURE --with-pydebug"
