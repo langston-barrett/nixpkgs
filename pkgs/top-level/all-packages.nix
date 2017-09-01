@@ -13821,6 +13821,7 @@ with pkgs;
   };
 
   chromium = callPackage ../applications/networking/browsers/chromium {
+    stdenv = libcxxStdenv;
     channel = "stable";
     pulseSupport = config.pulseaudio or true;
     enablePepperFlash = config.chromium.enablePepperFlash or false;

@@ -1,0 +1,30 @@
+diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
+index 6e3ddbd..5bf599a 100644
+--- a/build/config/compiler/BUILD.gn
++++ b/build/config/compiler/BUILD.gn
+@@ -1110,9 +1110,6 @@ config("default_warnings") {
+         # TODO(hans): https://crbug.com/637306
+         "-Wno-address-of-packed-member",
+ 
+-        # TODO(hans): https://crbug.com/681136
+-        "-Wno-unused-lambda-capture",
+-
+         # TODO(thakis ): https://crbug.com/683349
+         "-Wno-user-defined-warnings",
+       ]
+diff --git a/build/toolchain/gcc_toolchain.gni b/build/toolchain/gcc_toolchain.gni
+index d728663..0278c91 100644
+--- a/build/toolchain/gcc_toolchain.gni
++++ b/build/toolchain/gcc_toolchain.gni
+@@ -568,9 +568,8 @@ template("clang_toolchain") {
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
++    cc = "clang"
++    cxx = "clang++"
+     ld = cxx
+     readelf = "${toolprefix}readelf"
+     ar = "${prefix}/llvm-ar"

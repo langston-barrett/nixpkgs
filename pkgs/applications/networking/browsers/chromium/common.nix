@@ -6,6 +6,7 @@
 , libpng, libcap
 , xdg_utils, yasm, minizip, libwebp
 , libusb1, pciutils, nss, re2, zlib, libvpx
+, llvm
 
 , python2Packages, perl, pkgconfig
 , nspr, systemd, kerberos
@@ -129,6 +130,7 @@ let
       # To enable ChromeCast, go to chrome://flags and set "Load Media Router Component Extension" to Enabled
       # Fixes Chromecast: https://bugs.chromium.org/p/chromium/issues/detail?id=734325
       ./patches/fix_network_api_crash.patch
+      ./patches/system-clang.patch
     ] # As major versions are added, you can trawl the gentoo and arch repos at
       # https://gitweb.gentoo.org/repo/gentoo.git/plain/www-client/chromium/
       # https://git.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/chromium
@@ -176,6 +178,8 @@ let
       # Allow to put extensions into the system-path.
       sed -i -e 's,/usr,/run/current-system/sw,' chrome/common/chrome_paths.cc
 
+      sed -i 's,ar = "''${prefix}/llvm-ar",ar = "${llvm}/bin/llvm-ar",' build/toolchain/gcc_toolchain.gni
+
       patchShebangs .
       # use our own nodejs
       mkdir -p third_party/node/linux/node-linux-x64/bin
@@ -215,7 +219,7 @@ let
       use_cups = cupsSupport;
 
       treat_warnings_as_errors = false;
-      is_clang = false;
+      is_clang = true;
       clang_use_chrome_plugins = false;
       remove_webcore_debug_symbols = true;
       use_gtk3 = true;
