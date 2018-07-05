@@ -14,6 +14,12 @@ let param =
       sha256 = "16fsf4cggx9s9fkijnpi4g614nmdb2yx7inzqqn070f8p959qcrd";
     };
 
+    "8.8" = {
+      version = "20180705";
+      rev = "2685dc91f528dc3e82f17a1c32804a94d2ee8ed7";
+      sha256 = "0ll22lfzjglnvvf4p0vwk8crwn2c5lkawd85wr3qzcrwnpp5dc43";
+    };
+
   }."${coq.coq-version}"
 ; in
 
@@ -43,7 +49,7 @@ stdenv.mkDerivation rec {
   };
 
   passthru = {
-    compatibleCoqVersions = v: builtins.elem v [ "8.6" "8.7" ];
+    compatibleCoqVersions = v: builtins.elem v [ "8.6" "8.7" "8.8" ];
   };
 
 }
