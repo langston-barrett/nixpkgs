@@ -19,6 +19,7 @@ let
         else null;
       category-theory = callPackage ../development/coq-modules/category-theory { };
       CoLoR = callPackage ../development/coq-modules/CoLoR {};
+      containers = callPackage ../development/coq-modules/containers { };
       coq-ext-lib = callPackage ../development/coq-modules/coq-ext-lib {};
       coq-haskell = callPackage ../development/coq-modules/coq-haskell { };
       coquelicot = callPackage ../development/coq-modules/coquelicot {};
